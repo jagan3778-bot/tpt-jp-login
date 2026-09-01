@@ -19,108 +19,102 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #001f3f, #004080);
+            background: linear-gradient(135deg, #001f3f, #0066a1);
         }
 
-        .login-box {
-            width: 360px;
-            padding: 35px;
+        .login-container {
+            width: 380px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            padding: 35px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
         }
 
+        /* Logo */
         .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: #f5c400;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px;
-            font-weight: bold;
-            color: #002b5c;
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
         }
 
         h1 {
             color: #002b5c;
-            font-size: 26px;
-            margin-bottom: 8px;
+            font-size: 28px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            color: #666;
-            margin-bottom: 25px;
+            color: #777;
             font-size: 14px;
+            margin-bottom: 30px;
         }
 
-        .input-box {
+        .input-group {
             text-align: left;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        label {
+        .input-group label {
             display: block;
-            margin-bottom: 7px;
             color: #333;
             font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        input {
+        .input-group input {
             width: 100%;
-            padding: 12px;
+            padding: 13px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 7px;
             font-size: 15px;
             outline: none;
         }
 
-        input:focus {
-            border-color: #004080;
-            box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
+        .input-group input:focus {
+            border-color: #0066a1;
+            box-shadow: 0 0 5px rgba(0, 102, 161, 0.3);
         }
 
-        button {
+        .login-button {
             width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 6px;
+            padding: 14px;
             background: #002b5c;
             color: white;
+            border: none;
+            border-radius: 7px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 5px;
+            transition: 0.3s;
         }
 
-        button:hover {
-            background: #004080;
+        .login-button:hover {
+            background: #004c8c;
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 12px;
-            color: #777;
+            color: #888;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="login-box">
+    <div class="login-container">
 
-        <div class="logo">TN</div>
+        <!-- Put your logo file in the same folder and name it logo.png -->
+        <img src="logo.png" alt="Logo" class="logo">
 
         <h1>Tamil Nadu Police</h1>
-
         <p class="subtitle">Login Portal</p>
 
         <form onsubmit="login(event)">
 
-            <div class="input-box">
+            <div class="input-group">
                 <label for="username">Username</label>
                 <input
                     type="text"
@@ -130,7 +124,7 @@
                 >
             </div>
 
-            <div class="input-box">
+            <div class="input-group">
                 <label for="password">Password</label>
                 <input
                     type="password"
@@ -140,12 +134,14 @@
                 >
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" class="login-button">
+                Login
+            </button>
 
         </form>
 
         <div class="footer">
-            © Tamil Nadu Police
+            Login Demo
         </div>
 
     </div>
@@ -154,9 +150,10 @@
         function login(event) {
             event.preventDefault();
 
-            alert("Login functionality is not connected to a server.");
+            alert("This is a demo login page. No credentials are being submitted.");
         }
     </script>
 
 </body>
 </html>
+
